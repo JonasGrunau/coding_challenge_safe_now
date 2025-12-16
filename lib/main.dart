@@ -8,8 +8,6 @@ import 'package:get_it/get_it.dart';
 import 'package:graphql/client.dart';
 import 'package:localstorage/localstorage.dart';
 
-final scaffoldMessengerKey = GlobalKey<ScaffoldMessengerState>();
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initLocalStorage();
