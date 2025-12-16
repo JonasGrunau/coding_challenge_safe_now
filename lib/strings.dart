@@ -4,6 +4,7 @@ class Strings {
   static const error = 'Error';
   static const capital = 'Capital';
   static const currency = 'Currency';
+  static const dialingPrefix = 'Dialing Prefix';
   static const continent = 'Continent';
   static const languages = 'Languages';
   static const states = 'States';

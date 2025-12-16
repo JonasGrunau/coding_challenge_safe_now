@@ -66,6 +66,11 @@ class CountryDetailScreen extends ConsumerWidget {
                                 country.currency ?? Strings.notAvailable,
                               ),
                             ),
+                            ListTile(
+                              leading: Icon(Icons.phone),
+                              title: Text(Strings.dialingPrefix),
+                              subtitle: Text('+${country.phone}'),
+                            ),
                             Divider(),
                             CustomExpansionPanelList(
                               items: [
