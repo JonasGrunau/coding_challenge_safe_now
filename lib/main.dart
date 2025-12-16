@@ -11,12 +11,12 @@ import 'package:localstorage/localstorage.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initLocalStorage();
-  configureDependencies();
+  _configureDependencies();
 
   runApp(ProviderScope(child: const App()));
 }
 
-void configureDependencies() {
+void _configureDependencies() {
   GetIt.instance.registerSingleton<GraphQLClient>(graphQLClient);
 }
 
