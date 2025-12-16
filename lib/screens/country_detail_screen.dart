@@ -31,9 +31,11 @@ class CountryDetailScreen extends ConsumerWidget {
               padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
               child: Card(
                 child: Padding(
-                  padding: const EdgeInsets.all(8),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 24,
+                    vertical: 8,
+                  ),
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -41,59 +43,49 @@ class CountryDetailScreen extends ConsumerWidget {
                           Text(country.emoji, style: TextStyle(fontSize: 140)),
                         ],
                       ),
-                      Divider(indent: 16, endIndent: 16),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 16),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            ListTile(
-                              leading: Icon(Icons.location_on),
-                              title: Text(Strings.continent),
-                              subtitle: Text(country.continent.name),
-                            ),
-                            ListTile(
-                              leading: Icon(Icons.location_city),
-                              title: Text(Strings.capital),
-                              subtitle: Text(
-                                country.capital ?? Strings.notAvailable,
-                              ),
-                            ),
-                            ListTile(
-                              leading: Icon(Icons.money_rounded),
-                              title: Text(Strings.currency),
-                              subtitle: Text(
-                                country.currency ?? Strings.notAvailable,
-                              ),
-                            ),
-                            ListTile(
-                              leading: Icon(Icons.phone),
-                              title: Text(Strings.dialingPrefix),
-                              subtitle: Text('+${country.phone}'),
-                            ),
-                            Divider(),
-                            CustomExpansionPanelList(
-                              items: [
-                                ExpansionPanelListItem(
-                                  leadingIcon: Icons.map,
-                                  headerValue: Strings.states,
-                                  expandedValue: country.states
-                                      .map((state) => state.name)
-                                      .toList(),
-                                ),
-                                ExpansionPanelListItem(
-                                  leadingIcon: Icons.language,
-                                  headerValue: Strings.languages,
-                                  expandedValue: country.languages
-                                      .map((language) => language.name)
-                                      .toList(),
-                                ),
-                              ],
-                            ),
-                            SizedBox(height: 8),
-                          ],
+                      Divider(),
+                      ListTile(
+                        leading: Icon(Icons.location_on),
+                        title: Text(Strings.continent),
+                        subtitle: Text(country.continent.name),
+                      ),
+                      ListTile(
+                        leading: Icon(Icons.location_city),
+                        title: Text(Strings.capital),
+                        subtitle: Text(country.capital ?? Strings.notAvailable),
+                      ),
+                      ListTile(
+                        leading: Icon(Icons.money_rounded),
+                        title: Text(Strings.currency),
+                        subtitle: Text(
+                          country.currency ?? Strings.notAvailable,
                         ),
                       ),
+                      ListTile(
+                        leading: Icon(Icons.phone),
+                        title: Text(Strings.dialingPrefix),
+                        subtitle: Text('+${country.phone}'),
+                      ),
+                      Divider(),
+                      CustomExpansionPanelList(
+                        items: [
+                          ExpansionPanelListItem(
+                            leadingIcon: Icons.map,
+                            headerValue: Strings.states,
+                            expandedValue: country.states
+                                .map((state) => state.name)
+                                .toList(),
+                          ),
+                          ExpansionPanelListItem(
+                            leadingIcon: Icons.language,
+                            headerValue: Strings.languages,
+                            expandedValue: country.languages
+                                .map((language) => language.name)
+                                .toList(),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 8),
                     ],
                   ),
                 ),

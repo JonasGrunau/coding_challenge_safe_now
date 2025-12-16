@@ -8,6 +8,10 @@ import 'package:go_router/go_router.dart';
 class CountriesScreen extends ConsumerWidget {
   const CountriesScreen({super.key});
 
+  void _handleDarkModeTogglePressed(WidgetRef ref) {
+    ref.read(darkModeProvider.notifier).toggle();
+  }
+
   void _handleListTileTap(
     BuildContext context,
     String countryCode,
@@ -18,8 +22,8 @@ class CountriesScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final countries = ref.watch(countriesProvider);
     final isDarkMode = ref.watch(darkModeProvider);
+    final countries = ref.watch(countriesProvider);
 
     return Scaffold(
       appBar: AppBar(
@@ -27,7 +31,7 @@ class CountriesScreen extends ConsumerWidget {
         actions: [
           IconButton(
             icon: Icon(isDarkMode ? Icons.dark_mode : Icons.light_mode),
-            onPressed: () => ref.read(darkModeProvider.notifier).toggle(),
+            onPressed: () => _handleDarkModeTogglePressed(ref),
           ),
         ],
       ),
