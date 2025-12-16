@@ -28,7 +28,7 @@ class CountryDetailScreen extends ConsumerWidget {
 
           return SingleChildScrollView(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
               child: Card(
                 child: Padding(
                   padding: const EdgeInsets.all(8),
