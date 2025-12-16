@@ -3,14 +3,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get_it/get_it.dart';
 import 'package:graphql/client.dart';
 
-final countryDetailProvider =
+final countryByIdProvider =
     FutureProvider.family<Query_CountryById_country, String>((
       ref,
-      String code,
+      String id,
     ) async {
       final result = await GetIt.instance<GraphQLClient>().query_CountryById(
         Options_Query_CountryById(
-          variables: Variables_Query_CountryById(code: code),
+          variables: Variables_Query_CountryById(code: id),
         ),
       );
 
