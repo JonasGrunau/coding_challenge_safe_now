@@ -33,7 +33,7 @@ class CountryDetailScreen extends ConsumerWidget {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 24,
-                    vertical: 8,
+                    vertical: 16,
                   ),
                   child: Column(
                     children: [
@@ -85,7 +85,6 @@ class CountryDetailScreen extends ConsumerWidget {
                           ),
                         ],
                       ),
-                      SizedBox(height: 8),
                     ],
                   ),
                 ),
