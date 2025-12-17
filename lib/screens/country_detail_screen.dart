@@ -71,15 +71,15 @@ class CountryDetailScreen extends ConsumerWidget {
                         items: [
                           ExpansionPanelListItem(
                             leadingIcon: Icons.map,
-                            headerValue: Strings.states,
-                            expandedValue: country.states
+                            headerText: Strings.states,
+                            expandedValues: country.states
                                 .map((state) => state.name)
                                 .toList(),
                           ),
                           ExpansionPanelListItem(
                             leadingIcon: Icons.language,
-                            headerValue: Strings.languages,
-                            expandedValue: country.languages
+                            headerText: Strings.languages,
+                            expandedValues: country.languages
                                 .map((language) => language.name)
                                 .toList(),
                           ),

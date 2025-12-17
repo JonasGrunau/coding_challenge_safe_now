@@ -19,7 +19,7 @@ class _CustomExpansionPanelListState extends State<CustomExpansionPanelList> {
     });
   }
 
-  Widget _buildExpandedValue(List<String> values) {
+  Widget _buildExpandedValues(List<String> values) {
     final theme = Theme.of(context);
 
     if (values.isEmpty) {
@@ -54,10 +54,10 @@ class _CustomExpansionPanelListState extends State<CustomExpansionPanelList> {
           headerBuilder: (BuildContext context, bool isExpanded) {
             return ListTile(
               leading: Icon(item.leadingIcon),
-              title: Text(item.headerValue),
+              title: Text(item.headerText),
             );
           },
-          body: _buildExpandedValue(item.expandedValue),
+          body: _buildExpandedValues(item.expandedValues),
           isExpanded: item.isExpanded,
         );
       }).toList(),

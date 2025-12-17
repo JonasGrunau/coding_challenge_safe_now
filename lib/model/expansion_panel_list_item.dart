@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 class ExpansionPanelListItem {
   IconData leadingIcon;
-  String headerValue;
-  List<String> expandedValue;
+  String headerText;
+  List<String> expandedValues;
   bool isExpanded;
 
   ExpansionPanelListItem({
     required this.leadingIcon,
-    required this.headerValue,
-    required this.expandedValue,
+    required this.headerText,
+    required this.expandedValues,
     this.isExpanded = false,
   });
 }
